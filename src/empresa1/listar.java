@@ -30,7 +30,7 @@ void LISTAR(String VALOR){
     String [] titulos={"nom"," ced", "dir"," horas","hor.ext"," hor.ext.dob","valor","val.ext","val.ext.dob"," sueldo"};
         String [] registros = new String [10];
         
-        String sql ="SELECT * FROM sueldo where CEDULA LIkE '%"+VALOR+"%'";
+        String sql ="SELECT * FROM sueldo where CEDULA LIkE '"+VALOR+"%'";
         
         model = new DefaultTableModel(null,titulos);
         conexion cc= new conexion();

@@ -102,8 +102,9 @@ this.dispose ();
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
          String [] titulos={"nom"," ced", "dir"," horas","hor.ext"," hor.ext.dob","valor","val.ext","val.ext.dob"," sueldo"};
         String [] registros = new String [10];
-        
-        String sql ="SELECT * FROM sueldo where CEDULA LIKE '%"+textcedula.getText()+"%'";
+        String consulta;
+        consulta = textcedula.getText();
+        String sql ="SELECT * FROM sueldo WHERE CEDULA = '"+consulta+"'";
         
         model = new DefaultTableModel(null,titulos);
         conexion cc= new conexion();
