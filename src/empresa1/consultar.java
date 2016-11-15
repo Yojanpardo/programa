@@ -45,6 +45,7 @@ DefaultTableModel model;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("consultar");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("consultar");
@@ -72,6 +73,7 @@ DefaultTableModel model;
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 520, 90));
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(240, 240, 240));
         jLabel1.setText("Digite cedula");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 140, 20));
 
@@ -88,6 +90,7 @@ DefaultTableModel model;
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 420));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
@@ -100,7 +103,7 @@ this.dispose ();
          String [] titulos={"nom"," ced", "dir"," horas","hor.ext"," hor.ext.dob","valor","val.ext","val.ext.dob"," sueldo"};
         String [] registros = new String [10];
         
-        String sql ="SELECT * FROM sueldo where CEDULA LIkE '%"+textcedula.getText()+"%'";
+        String sql ="SELECT * FROM sueldo where CEDULA LIKE '%"+textcedula.getText()+"%'";
         
         model = new DefaultTableModel(null,titulos);
         conexion cc= new conexion();

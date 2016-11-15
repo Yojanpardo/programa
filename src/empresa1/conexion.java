@@ -11,8 +11,8 @@ public class conexion {
 
     public Connection conexion() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            cn = DriverManager.getConnection("jdbc:mysql://localhost/sueldo", "root", "");
+            Class.forName("org.postgresql.Driver");
+            cn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/empleados","postgres","aeropuerto2522");
             System.out.println("La conexion se realizo");
         } catch (ClassNotFoundException e) {
             System.out.println("No se encontro el driver de conexion");
