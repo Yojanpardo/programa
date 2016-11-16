@@ -43,8 +43,8 @@ public class datos {
         this.nombre = nombre;
     }
 
-    public int getCedula() {
-        return cedula;
+    public String getCedula() {
+        return cedula+"";
     }
 
     public void setCedula(int cedula) {
@@ -83,8 +83,8 @@ public class datos {
         this.total = total;
     }
 
-    public int getTelefono() {
-        return telefono;
+    public String getTelefono() {
+        return telefono+"";
     }
 
     public void setTelefono(int telefono) {

@@ -104,7 +104,7 @@ this.dispose ();
         String [] registros = new String [10];
         String consulta;
         consulta = textcedula.getText();
-        String sql ="SELECT * FROM sueldo WHERE CEDULA = '"+consulta+"'";
+        String sql ="SELECT * FROM sueldo WHERE CEDULA LIKE '"+consulta+"%'";
         
         model = new DefaultTableModel(null,titulos);
         conexion cc= new conexion();

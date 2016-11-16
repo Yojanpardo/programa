@@ -33,6 +33,7 @@ public class Ingresar extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ingresar ");
         setIconImages(null);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cedula.setBackground(new java.awt.Color(0, 0, 0));
@@ -63,6 +64,12 @@ public class Ingresar extends javax.swing.JFrame {
             }
         });
         getContentPane().add(textNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 160, 30));
+
+        textCed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textCedActionPerformed(evt);
+            }
+        });
         getContentPane().add(textCed, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 160, 30));
         getContentPane().add(textDir, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 160, 30));
         getContentPane().add(textHor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 160, 30));
@@ -93,6 +100,7 @@ public class Ingresar extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 340));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -135,9 +143,9 @@ public class Ingresar extends javax.swing.JFrame {
         sql="INSERT INTO sueldo(CEDULA, NOMBRE, TELEFONO, horast,horase,horasd,valor,valore,valord, total)VALUES(?,?,?,?,?,?,?,?,?,?)";
         try{
             PreparedStatement pst=reg.prepareStatement(sql);
-            pst.setInt(1, ob1.getCedula());
+            pst.setString(1, ob1.getCedula());
             pst.setString(2,ob1.getNombre());
-            pst.setInt(3,ob1.getTelefono());
+            pst.setString(3,ob1.getTelefono());
             pst.setInt(4,ob1.getHoras());
             pst.setInt(5,ob1.getHorasextras());
             pst.setInt(6,ob1.getHorasextrasdobles());
@@ -165,6 +173,10 @@ public class Ingresar extends javax.swing.JFrame {
     private void textNomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNomActionPerformed
 
     }//GEN-LAST:event_textNomActionPerformed
+
+    private void textCedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textCedActionPerformed
   
     public static void main(String args[]) {
         

@@ -41,6 +41,7 @@ public class eliminar extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         textcedula.addActionListener(new java.awt.event.ActionListener() {
@@ -75,6 +76,7 @@ public class eliminar extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 390));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void textcedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textcedulaActionPerformed
@@ -89,12 +91,11 @@ public class eliminar extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        try {
-         String [] registros = new String [10];
         conexion cc= new conexion();
         Connection cn = cc.conexion();
-        String sql ="DELETE FROM sueldo WHERE CEDULA = '"+textcedula.getText()+"'";
+        String sql ="DELETE FROM sueldo WHERE cedula='"+textcedula.getText()+"'";
             PreparedStatement pst = cn.prepareStatement(sql);
-            int n=pst.executeUpdate(sql);
+            int n=pst.executeUpdate();
             if(n==1){
               JOptionPane.showMessageDialog(null,textcedula.getText()+"  eliminado con exito");   
             }
